@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 12f;
     public Transform Player;
+    private Vector3 Scale;
 
     [SerializeField] private Rigidbody2D rb;
 
@@ -35,5 +37,16 @@ public class PlayerController : MonoBehaviour
         move = move + new Vector2(x, 0f) * speed * Time.deltaTime;
 
         Player.position = move;
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            Scale = new Vector3(1, 1, 1);
+            Player.localScale = Scale;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            Scale = new Vector3(-1,1, 1);
+            Player.localScale = Scale;
+        }
     }
 }
