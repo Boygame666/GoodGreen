@@ -239,8 +239,9 @@ GameObject:
   - component: {fileID: 258527670}
   - component: {fileID: 258527669}
   - component: {fileID: 258527673}
+  - component: {fileID: 258527674}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,7 +311,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 37.79, y: 79.70537}
-    newSize: {x: 1, y: 2}
+    newSize: {x: 37.79, y: 79.70537}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -400,7 +401,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   Player: {fileID: 258527672}
+  anim: {fileID: 0}
   rb: {fileID: 258527669}
+--- !u!95 &258527674
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258527668}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 99baabda20ff565469011cf764f7f128, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &327353527
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1335107978}
   - component: {fileID: 1335107979}
+  - component: {fileID: 1335107980}
   m_Layer: 0
   m_Name: Hiker
   m_TagString: Untagged
@@ -821,6 +844,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1335107980
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335107977}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbf5d99b9ced90b45b0b8d92541f10e0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1590608021
 GameObject:
   m_ObjectHideFlags: 0

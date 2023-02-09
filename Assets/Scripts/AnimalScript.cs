@@ -36,8 +36,8 @@ public class AnimalScript : MonoBehaviour
     }
     private void Start()
     {
-        controls.Mouse.Click.started += ctx =>StardedClick();
-        controls.Mouse.Click.performed += ctx  =>EndClick();
+        controls.Mouse.Click.started += _ =>StardedClick();
+        controls.Mouse.Click.performed += _ =>EndClick();
     }
 
     private void StardedClick()

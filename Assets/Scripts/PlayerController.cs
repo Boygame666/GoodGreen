@@ -13,12 +13,15 @@ public class PlayerController : MonoBehaviour
     private Vector3 Scale;
     private Vector3 MousePosition;
 
+
+    Animator anim;
+
     [SerializeField] private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
