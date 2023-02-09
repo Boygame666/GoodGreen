@@ -9,6 +9,7 @@ public class CameraController : MonoBehaviour
     private Vector3 Player_Pos;
 
     public float MiraDelante;
+    public float Smoothing;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class CameraController : MonoBehaviour
 
     void DireccionPlayer()
     {
+        //Teniendo en cuenta donde mira el usuario la camara se movera en esa dirreccion y volvera de nuevo al jugador
         if(Player.transform.localScale.x ==  1)
         {
             Player_Pos = new Vector3(Player_Pos.x + MiraDelante, transform.position.y,transform.position.z);    
@@ -36,7 +38,8 @@ public class CameraController : MonoBehaviour
             Player_Pos = new Vector3(Player_Pos.x - MiraDelante, transform.position.y, transform.position.z);
         }
 
-        transform.position = Player_Pos;
+        //Codigo para cuando se hace el mov en dicha direccion sea mas fluido y no forzado
+        transform.position = Vector3.Lerp(transform.position,Player_Pos, Smoothing * Time.deltaTime);
     }
 
 }

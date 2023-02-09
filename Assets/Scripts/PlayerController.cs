@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 12f;
     public Transform Player;
     private Vector3 Scale;
+    private Vector3 MousePosition;
 
     [SerializeField] private Rigidbody2D rb;
 
@@ -25,6 +26,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MovementPlayer();
+        fixScale();
+        //ClickPlayer();
     }
 
     void MovementPlayer()
@@ -38,15 +41,36 @@ public class PlayerController : MonoBehaviour
 
         Player.position = move;
 
+
+    }
+    //void ClickPlayer()
+    //{
+    //    //busca en el escenario(background) donde hemos hecho click  
+    //    MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    //    //establece la posicion z a 0 para no modificar la profundidad
+    //    MousePosition.z = 0f;
+    //    //establece la posicion y a 0 para no modificar la profundidad
+    //    MousePosition.y = 0f;
+
+    //    if (Input.GetMouseButtonDown(0))//el juego detecta cuando hacemos click izq
+    //    {
+    //        // ahora movemos el objeto hacia el punto que hemos clicado con una velocidad definida
+    //        Player.position = Vector3.MoveTowards(Player.position, MousePosition, speed * Time.deltaTime);
+    //    }
+    //}
+    void fixScale()
+    {
         if (Input.GetKey(KeyCode.D))
         {
             Scale = new Vector3(1, 1, 1);
             Player.localScale = Scale;
+
         }
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
         {
-            Scale = new Vector3(-1,1, 1);
+            Scale = new Vector3(-1, 1, 1);
             Player.localScale = Scale;
+
         }
     }
 }
