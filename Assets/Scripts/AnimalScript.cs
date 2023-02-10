@@ -16,6 +16,8 @@ public class AnimalScript : MonoBehaviour
 
     GameObject animal;
 
+    CambioScene CS;
+
     private CursorController controls;
 
     public Camera cam;
@@ -58,21 +60,26 @@ public class AnimalScript : MonoBehaviour
         if(hit2D.collider != null)
         {
             trigger = true;
-            Console.Write("2D collider " + hit2D.collider.tag);
         }
         else
             trigger = false;
 
-        if (hit2D){
+        if (hit2D.collider != null && trigger == true){
 
             animal = null;
             animal = hit2D.transform.gameObject;
-            Console.Write("2D collider " + hit2D.collider.tag);
+            
 
             if (animal.CompareTag("Animal"))
             {
-                Console.Write("2D collider " + hit2D.collider.tag);
+                CS.LoadScene();
             }
+
+
+        }
+        if(animal != null)
+        {
+            animal = null;
         }
 
 

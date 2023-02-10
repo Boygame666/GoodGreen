@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -13,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 Scale;
     private Vector3 MousePosition;
 
+    PausaMenu PM;
+
 
     Animator anim;
 
@@ -23,6 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        PM= GetComponent<PausaMenu>();
     }
 
     // Update is called once per frame
@@ -31,6 +35,8 @@ public class PlayerController : MonoBehaviour
         MovementPlayer();
         fixScale();
         //ClickPlayer();
+        
+
     }
 
     void MovementPlayer()
@@ -63,6 +69,7 @@ public class PlayerController : MonoBehaviour
     //}
     void fixScale()
     {
+
         if (Input.GetKey(KeyCode.D))
         {
             Scale = new Vector3(1, 1, 1);
@@ -75,5 +82,6 @@ public class PlayerController : MonoBehaviour
             Player.localScale = Scale;
 
         }
+
     }
 }
