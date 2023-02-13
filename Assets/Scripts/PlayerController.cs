@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 Scale;
     private Vector3 MousePosition;
 
+
     PausaMenu PM;
 
 
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         PM= GetComponent<PausaMenu>();
+
     }
 
     // Update is called once per frame
@@ -45,6 +47,9 @@ public class PlayerController : MonoBehaviour
 
         //crea el movimiento
         Vector2 move = Player.position;
+
+        //llamamos al animador teniendo en cuenta el valor del mov en x
+        anim.SetFloat("Mov", Mathf.Abs(x));
 
         move = move + new Vector2(x, 0f) * speed * Time.deltaTime;
 
