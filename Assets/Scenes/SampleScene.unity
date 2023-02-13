@@ -365,7 +365,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.05236715, y: -0.594717}
   m_SpriteTilingProperty:
-    border: {x: 3.5446808, y: 0.21276595, z: 3.5446808, w: 0.5531915}
+    border: {x: 3.5446808, y: 0.21276595, z: 3.4936168, w: 0.5531915}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 8.170213, y: 4.5957446}
     newSize: {x: 4.7200003, y: 9.467343}
