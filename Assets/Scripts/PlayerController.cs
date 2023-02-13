@@ -16,8 +16,6 @@ public class PlayerController : MonoBehaviour
 
 
     PausaMenu PM;
-
-
     Animator anim;
 
     [SerializeField] private Rigidbody2D rb;
