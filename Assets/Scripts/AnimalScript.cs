@@ -16,8 +16,6 @@ public class AnimalScript : MonoBehaviour
 
     GameObject animal;
 
-    CambioScene CS;
-
     private CursorController controls;
 
     public Camera cam;
@@ -72,7 +70,7 @@ public class AnimalScript : MonoBehaviour
 
             if (animal.CompareTag("Animal"))
             {
-                CS.LoadScene();
+                
             }
 
 
