@@ -25,6 +25,23 @@ public class PhotoController : MonoBehaviour
     /// </summary>
     private SpriteRenderer imagen;
     /// <summary>
+    /// velocidad de disi´pación del flash
+    /// </summary>
+    public float flashSpeed;
+    /// <summary>
+    /// booleano de gestión de tiempo en que se muestra la foto
+    /// </summary>
+    public bool showing;
+
+    /// <summary>
+    /// booleano de gestión de cooldown del flash
+    /// </summary>
+    public bool flashReady;
+    /// <summary>
+    /// booleano que indica cuando el jugador no ve
+    /// </summary>
+    public bool flashed;
+    /// <summary>
     /// referencia a la cámara de la cámara física
     /// </summary>
     public Camera cameraCamera;
@@ -36,8 +53,6 @@ public class PhotoController : MonoBehaviour
     /// textura en la que se guarda la captura de pantalla
     /// </summary>
     Texture2D screenCapture;
-    public bool final;
-    [SerializeField] GameObject black;
 
 
 
@@ -50,8 +65,6 @@ public class PhotoController : MonoBehaviour
 
         imagen = photo.GetComponent<SpriteRenderer>();
 
-        final = false;
-
     }
 
     // Update is called once per frame
@@ -60,13 +73,67 @@ public class PhotoController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) )
         {
             //cancela la animación actual
-            photoAnimator.Play("None");
+            photoAnimator.Play("Foto");
+            flashReady = false;
+            StartCoroutine(CapturePhoto());
 
 
             //usa una corrutina para accionar todo el mecanismo de la foto
 
         }
 
+    }
+    /// <summary>
+    /// maneja el efecto de flash
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator FlashCoroutine()
+    {
+        flashed = true;
+        //esconde los objetos clave
+
+        timer = 0f;
+
+        //disipa el flash lentamente
+        while (timer < 4f)
+        {
+            //efecto de disipacion
+            flash.color = Color.Lerp(flash.color, Color.clear, flashSpeed * Time.deltaTime);
+
+            timer += Time.deltaTime;
+
+            if (timer > 0.1f && flashed)
+            {
+                flashed = false;
+
+            }
+
+
+            //eventualmente muestra la foto
+            else if (timer > 1f && !showing)
+            {
+
+                photoAnimator.Play("PhotoShow");
+                showing = true;
+
+            }
+            else if (timer > 4f)
+                flashReady = true;
+
+
+
+            //Debug.Log(timer);
+
+            yield return null;
+
+        }
+        //devuelve al color transparente la pantalla
+        flash.color = Color.clear;
+
+        showing = false;
+
+
+        yield break;
     }
     /// <summary>
     /// captura la pantalla
@@ -76,15 +143,14 @@ public class PhotoController : MonoBehaviour
     {
         //pone la pantalla en blanco
         flash.color = Color.white;
-        if (final)
-        {
-            black.SetActive(true);
-        }
 
         yield return new WaitForEndOfFrame();
 
         //crea un rectangulo y lee cada pixel de pantalla para pintarlo en él
         Rect regionToRead = new Rect(0, 0, Screen.width, Screen.height);
+
+        //screenCapture.ReadPixels(regionToRead, 0, 0, false);
+        //screenCapture.Apply();
 
         //crea textura a partir de una render texture de la camara
         RenderTexture rt = new RenderTexture(Screen.width, Screen.height, 24);
@@ -100,15 +166,19 @@ public class PhotoController : MonoBehaviour
         RenderTexture.active = null; // added to avoid errors 
         DestroyImmediate(rt);
 
+        //inicia la corrutina del flash
+        StartCoroutine(FlashCoroutine());
 
-        ShowPhoto();
+        //muestra la foto
+        if (!showing)
+            ShowPhoto();
 
     }
 
-        /// <summary>
-        /// muestra la foto
-        /// </summary>
-        void ShowPhoto()
+    /// <summary>
+    /// muestra la foto
+    /// </summary>
+    void ShowPhoto()
     {
         //toma la captura de pantalla y la aplica a un sprite
         Sprite photoSprite = Sprite.Create(screenCapture, new Rect(0.0f, 0.0f, screenCapture.width, screenCapture.height), new Vector2(0.5f, 0.5f), 100.0f);
