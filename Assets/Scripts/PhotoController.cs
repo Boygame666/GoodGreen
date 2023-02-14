@@ -25,6 +25,14 @@ public class PhotoController : MonoBehaviour
     /// </summary>
     private SpriteRenderer imagen;
     /// <summary>
+    /// referencia a la cámara de la cámara física
+    /// </summary>
+    public Camera cameraCamera;
+    /// <summary>
+    /// componente animator de la foto física
+    /// </summary>
+    public Animator photoAnimator;
+    /// <summary>
     /// velocidad de disi´pación del flash
     /// </summary>
     public float flashSpeed;
@@ -42,14 +50,6 @@ public class PhotoController : MonoBehaviour
     /// </summary>
     public bool flashed;
     /// <summary>
-    /// referencia a la cámara de la cámara física
-    /// </summary>
-    public Camera cameraCamera;
-    /// <summary>
-    /// componente animator de la foto física
-    /// </summary>
-    public Animator photoAnimator;
-    /// <summary>
     /// textura en la que se guarda la captura de pantalla
     /// </summary>
     Texture2D screenCapture;
@@ -60,6 +60,8 @@ public class PhotoController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        flashReady = true;
+        showing = false;
         photoAnimator = photo.GetComponent<Animator>();
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
 
@@ -70,10 +72,10 @@ public class PhotoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) )
+        if (Input.GetMouseButtonDown(0) && flashReady)
         {
             //cancela la animación actual
-            photoAnimator.Play("Foto");
+            photoAnimator.Play("Empty");
             flashReady = false;
             StartCoroutine(CapturePhoto());
 
@@ -113,7 +115,7 @@ public class PhotoController : MonoBehaviour
             else if (timer > 1f && !showing)
             {
 
-                photoAnimator.Play("PhotoShow");
+                photoAnimator.Play("FotoAnim");
                 showing = true;
 
             }
