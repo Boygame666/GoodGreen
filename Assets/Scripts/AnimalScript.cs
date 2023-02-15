@@ -15,7 +15,8 @@ public class AnimalScript : MonoBehaviour
     public bool trigger;
 
     GameObject animal;
-
+    public Transform Es;
+    private CameraController CC;
     private CursorController controls;
 
     public Camera cam;
@@ -70,9 +71,14 @@ public class AnimalScript : MonoBehaviour
 
             if (animal.CompareTag("Animal"))
             {
-                
+                cam.transform.position = new Vector3(Es.transform.position.x, Es.transform.position.y, transform.position.z);
+                //CC.enabled = false;
             }
-
+            if (animal.CompareTag("BackAnimal"))
+            {
+                cam.transform.position = CC.Player.transform.position;
+               // CC.enabled = true;
+            }
 
         }
         if(animal != null)
