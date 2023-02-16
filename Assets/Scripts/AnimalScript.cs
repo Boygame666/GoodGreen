@@ -13,10 +13,11 @@ public class AnimalScript : MonoBehaviour
     /// booleano que gestiona la activación de los triggers del mapa
     /// </summary>
     public bool trigger;
-
-    GameObject animal;
+    public GameObject Animal;
+    
     public Transform Es;
-    private CameraController CC;
+    public PlayerController PC;
+    private PhotoController PH;
     private CursorController controls;
 
     public Camera cam;
@@ -43,17 +44,18 @@ public class AnimalScript : MonoBehaviour
 
     private void StardedClick()
     {
-        Console.WriteLine("2D collider");
+        controls.Enable();
     }
     private void EndClick()
     {
         ClickAnimal();
+        controls.Disable();
     }
 
 
     void ClickAnimal()
     {
-        Ray ray = cam.ScreenPointToRay(controls.Mouse.Position.ReadValue<Vector2>());
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
         if(hit2D.collider != null)
@@ -63,29 +65,26 @@ public class AnimalScript : MonoBehaviour
         else
             trigger = false;
 
-        if (hit2D.collider != null && trigger == true){
-
-            animal = null;
-            animal = hit2D.transform.gameObject;
-            
-
-            if (animal.CompareTag("Animal"))
-            {
-                cam.transform.position = new Vector3(Es.transform.position.x, Es.transform.position.y, transform.position.z);
-                //CC.enabled = false;
-            }
-            if (animal.CompareTag("BackAnimal"))
-            {
-                cam.transform.position = CC.Player.transform.position;
-               // CC.enabled = true;
-            }
-
-        }
-        if(animal != null)
+        RaycastHit2D[] Hits2DallNonAlloc = new RaycastHit2D[1];
+        int numberOfHits = Physics2D.GetRayIntersectionNonAlloc(ray, Hits2DallNonAlloc);
+        for(int i = 0; i < Hits2DallNonAlloc.Length; ++i) 
         {
-            animal = null;
-        }
+            if (Hits2DallNonAlloc[i].collider != null)
+            {
+                if(hit2D.collider.tag == "Animal")
+                {                                     
+                    cam.transform.position = new Vector3(Es.transform.position.x, Es.transform.position.y, -1);
+                    PC.transform.position = new Vector3(Es.transform.position.x, transform.position.y, transform.position.z);
+                    Animal.GetComponent<PhotoController>().EscenaAnimal();
+                }
+                if (hit2D.collider.tag == "BackAnimal")
+                {
+                    Animal.GetComponent<PhotoController>().EscenaBackAnimal();
 
+                }
+            }
+
+        }
 
 
     }

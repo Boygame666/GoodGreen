@@ -40,7 +40,6 @@ public class PhotoController : MonoBehaviour
     /// booleano de gestión de tiempo en que se muestra la foto
     /// </summary>
     public bool showing;
-
     /// <summary>
     /// booleano de gestión de cooldown del flash
     /// </summary>
@@ -49,6 +48,10 @@ public class PhotoController : MonoBehaviour
     /// booleano que indica cuando el jugador no ve
     /// </summary>
     public bool flashed;
+    /// <summary>
+    /// booleano para indicar que estamos en la escena del animal
+    /// </summary>
+    public bool EsceneAnimal;
     /// <summary>
     /// textura en la que se guarda la captura de pantalla
     /// </summary>
@@ -66,13 +69,13 @@ public class PhotoController : MonoBehaviour
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
 
         imagen = photo.GetComponent<SpriteRenderer>();
-
+        EsceneAnimal = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && flashReady)
+        if (Input.GetMouseButtonDown(0) && flashReady&&EsceneAnimal)
         {
             //cancela la animación actual
             photoAnimator.Play("Empty");
@@ -84,6 +87,14 @@ public class PhotoController : MonoBehaviour
 
         }
 
+    }
+    public void EscenaAnimal()
+    {
+        EsceneAnimal= true;
+    }
+    public void EscenaBackAnimal()
+    {
+        EsceneAnimal = false;
     }
     /// <summary>
     /// maneja el efecto de flash

@@ -73,13 +73,13 @@ public class PlayerController : MonoBehaviour
     void fixScale()
     {
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             Scale = new Vector3(1, 1, 1);
             Player.localScale = Scale;
 
         }
-        else if (Input.GetKey(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow))
         {
             Scale = new Vector3(-1, 1, 1);
             Player.localScale = Scale;
