@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class OpcionesMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool active;
+    Canvas canvas;
+    PlayerController PC;
+
+    private void Start()
     {
-        
+
+        canvas = GetComponent<Canvas>();
+        canvas.enabled = false;
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Y)|| Input.GetKeyDown(KeyCode.Tab))
+        {
+            active = !active;
+            canvas.enabled = active;
+            Time.timeScale = (active) ? 0 : 1f;
+
+        }
     }
 }
