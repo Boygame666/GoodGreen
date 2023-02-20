@@ -983,6 +983,7 @@ MonoBehaviour:
   photoDisplayArea: {fileID: 2140188665}
   flash: {fileID: 322497838}
   photo: {fileID: 1123131633}
+  hidden: {fileID: 2128731105}
   cameraCamera: {fileID: 519420031}
   photoAnimator: {fileID: 527792274}
   flashSpeed: 1
@@ -2135,7 +2136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8383ebc23b5de9489c1a283f5a36403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DontHide: 0
+  DontHide: 1
   hidden: {fileID: 2128731105}
 --- !u!1 &1877296761
 GameObject:
@@ -2629,7 +2630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   photo: {fileID: 1123131633}
-  hiddenList:
+  hiddenObject:
   - {fileID: 1725589290}
 --- !u!4 &2128731106
 Transform:

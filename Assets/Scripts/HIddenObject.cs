@@ -17,7 +17,7 @@ public class HIddenObject : MonoBehaviour
     /// <summary>
     /// referencia a la lista de objetos ocultos y a ocultar
     /// </summary>
-    public List<GameObject> hiddenList = new List<GameObject>();
+    public List<GameObject> hiddenObject = new List<GameObject>();
 
     private bool hidden;
 
@@ -31,7 +31,7 @@ public class HIddenObject : MonoBehaviour
     public void hide()
     {
         //para cada objeto en la lista si es visible lo esconde, si es solido lo transparenta y viceversa
-        foreach (GameObject go in hiddenList)
+        foreach (GameObject go in hiddenObject)
         {
             if (go != null)
             {
@@ -82,6 +82,6 @@ public class HIddenObject : MonoBehaviour
 
     public void Add(GameObject go)
     {
-        hiddenList.Add(go);
+        hiddenObject.Add(go);
     }
 }

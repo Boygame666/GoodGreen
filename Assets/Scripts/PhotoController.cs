@@ -21,6 +21,10 @@ public class PhotoController : MonoBehaviour
     /// </summary>
     public GameObject photo;
     /// <summary>
+    /// lista de objetos ocultos a mostrar
+    /// </summary>
+    public HIddenObject hidden;
+    /// <summary>
     /// renderizador de sprites adjunto al objeto foto para mostrar la imagen como sprite
     /// </summary>
     private SpriteRenderer imagen;
@@ -104,6 +108,7 @@ public class PhotoController : MonoBehaviour
     {
         flashed = true;
         //esconde los objetos clave
+        hidden.hide();
 
         timer = 0f;
 
@@ -156,6 +161,8 @@ public class PhotoController : MonoBehaviour
     {
         //pone la pantalla en blanco
         flash.color = Color.white;
+
+        hidden.hide();
 
         yield return new WaitForEndOfFrame();
 
