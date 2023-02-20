@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PausaMenu : MonoBehaviour
 {
     private bool active;
+    /// <summary>
+    /// referencia al canvas que estamos utlizando
+    /// </summary>
     Canvas canvas;
-    PlayerController PC;
+    //[SerializeField] private GameObject MenuPausa;
+    public GameObject Opcion;
 
     private void Start()
     {
-
+        //lo llamamos y al iniciarse esta desactivado
         canvas = GetComponent<Canvas>();
         canvas.enabled = false;
 
@@ -19,12 +24,21 @@ public class PausaMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Y)|| Input.GetKeyDown(KeyCode.Tab))
+            Pausa();
+        
+    }
+    void Pausa()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Y) || Input.GetKeyDown(KeyCode.Tab))
         {
             active = !active;
             canvas.enabled = active;
             Time.timeScale = (active) ? 0 : 1f;
+            //MenuPausa.SetActive(true);
 
         }
     }
+
+
 }
