@@ -23,7 +23,6 @@ public class AnimacionTrigger : MonoBehaviour
         {
             Golondrina.SetActive(true);
             Destroy(BoxTrigger);
-            //Golondrina.GetComponent<Animator>().enabled = false;
             
         }
 
