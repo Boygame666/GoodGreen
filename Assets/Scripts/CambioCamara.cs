@@ -9,11 +9,11 @@ public class CambioCamara : MonoBehaviour
 
     void Start()
     {
-        ActivarCamara(0);
+        ActivarCamara();
     }
-    public void ActivarCamara(int i)
+    public void ActivarCamara()
     {
-        for( i = 0;i < Ncamara;i++)
+        for(int  i = 0;i < Ncamara;i++)
         {
             ListaDeCamaras[i].gameObject.SetActive(false);
         }

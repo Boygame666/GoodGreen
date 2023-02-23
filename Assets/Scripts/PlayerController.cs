@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
             Player.localScale = Scale;
 
         }
-        else if (Input.GetKey(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             Scale = new Vector3(-1, 1, 1);
             Player.localScale = Scale;

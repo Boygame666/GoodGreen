@@ -1043,7 +1043,7 @@ GameObject:
   - component: {fileID: 527792277}
   m_Layer: 0
   m_Name: Verderon
-  m_TagString: Untagged
+  m_TagString: BackAnimal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1407,7 +1407,7 @@ GameObject:
   - component: {fileID: 694707873}
   m_Layer: 0
   m_Name: ColliderVerderon
-  m_TagString: Untagged
+  m_TagString: BackAnimal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3160,7 +3160,7 @@ MonoBehaviour:
   Es: {fileID: 901898663}
   PC: {fileID: 258527673}
   CC: {fileID: 258527676}
-  cam: {fileID: 1679234176}
+  cam: {fileID: 519420031}
 --- !u!61 &2113036351
 BoxCollider2D:
   m_ObjectHideFlags: 0
