@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="Galeria system/ Galeria Item")]
 public class GaleriaScrip : ScriptableObject
 {
+    //datos que tendran cada uno de nuestros scripteable objects
     public int ID;
     public string NameOfAnimal;
     [TextArea(4,4)]

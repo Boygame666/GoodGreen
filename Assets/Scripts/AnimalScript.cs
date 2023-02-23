@@ -17,6 +17,7 @@ public class AnimalScript : MonoBehaviour
     
     public Transform Es;
     public PlayerController PC;
+    public CambioCamara CC;
     private PhotoController PH;
     private CursorController controls;
 
@@ -58,6 +59,7 @@ public class AnimalScript : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+
         if(hit2D.collider != null)
         {
             trigger = true;
@@ -65,21 +67,27 @@ public class AnimalScript : MonoBehaviour
         else
             trigger = false;
 
-        RaycastHit2D[] Hits2DallNonAlloc = new RaycastHit2D[1];
-        int numberOfHits = Physics2D.GetRayIntersectionNonAlloc(ray, Hits2DallNonAlloc);
-        for(int i = 0; i < Hits2DallNonAlloc.Length; ++i) 
+        RaycastHit2D[] Hits2Dall = Physics2D.GetRayIntersectionAll(ray);
+        for(int i = 0; i < Hits2Dall.Length; ++i) 
         {
-            if (Hits2DallNonAlloc[i].collider != null)
+            if (Hits2Dall[i].collider != null)
             {
                 if(hit2D.collider.tag == "Animal")
-                {                                     
-                    cam.transform.position = new Vector3(Es.transform.position.x, Es.transform.position.y, -1);
-                    PC.transform.position = new Vector3(Es.transform.position.x, transform.position.y, transform.position.z);
+                {
+                    //cam.transform.position = new Vector3(Es.transform.position.x, Es.transform.position.y, -1);
                     Animal.GetComponent<PhotoController>().EscenaAnimal();
+                    CC.ListaDeCamaras[1].gameObject.SetActive(true);
+                    CC.ListaDeCamaras[0].gameObject.SetActive(false);
+                    CC.ListaDeCamaras[1].transform.position = new Vector3(Es.transform.position.x, Es.transform.position.y, -1);
+                    //CC.GetComponent<CambioCamara>().ActivarCamara(1);
                 }
                 if (hit2D.collider.tag == "BackAnimal")
                 {
+                    //hit2D.collider.gameObject.GetComponent<PhotoController>().EscenaBackAnimal();
                     Animal.GetComponent<PhotoController>().EscenaBackAnimal();
+                    CC.ListaDeCamaras[1].gameObject.SetActive(false);
+                    CC.ListaDeCamaras[0].gameObject.SetActive(true);
+                    //CC.ListaDeCamaras[0].gameObject.SetActive(true);
 
                 }
             }

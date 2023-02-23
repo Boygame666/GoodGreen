@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class GaleriaSlots 
 {
+    //Aqui creamos lo que se guardaria en cada slot de la galeria
     [SerializeField] private GaleriaScrip GaleriaFoto;
     [SerializeField] private int MaxNumGaleriaFoto;
 
