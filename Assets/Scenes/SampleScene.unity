@@ -1067,9 +1067,11 @@ MonoBehaviour:
   photoDisplayArea: {fileID: 2140188665}
   flash: {fileID: 322497838}
   photo: {fileID: 1123131633}
+  PhotoP: {fileID: 1491292532}
   hidden: {fileID: 2128731105}
   cameraCamera: {fileID: 806597995}
-  photoAnimator: {fileID: 527792274}
+  photoAnimator: {fileID: 1123131634}
+  PhotoCollider: {fileID: 1491292534}
   flashSpeed: 1
   showing: 0
   flashReady: 0
@@ -2064,7 +2066,7 @@ Animator:
   m_GameObject: {fileID: 1491292532}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bf76c1d1d4a707446b8b82bcbeb57307, type: 2}
+  m_Controller: {fileID: 9100000, guid: b5207a32fbf23744a9d3fe68c5d12769, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2155,7 +2157,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
