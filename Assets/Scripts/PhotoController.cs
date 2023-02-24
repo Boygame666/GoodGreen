@@ -33,6 +33,10 @@ public class PhotoController : MonoBehaviour
     /// </summary>
     private SpriteRenderer imagen;
     /// <summary>
+    /// renderizador de sprites adjunto al objeto foto para mostrar la imagen como sprite
+    /// </summary>
+    private SpriteRenderer Galeria;
+    /// <summary>
     /// referencia a la cámara de la cámara física
     /// </summary>
     public Camera cameraCamera;
@@ -82,7 +86,7 @@ public class PhotoController : MonoBehaviour
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
 
         imagen = photo.GetComponent<SpriteRenderer>();
-        imagen = PhotoP.GetComponent<SpriteRenderer>();
+        Galeria = PhotoP.GetComponent<SpriteRenderer>();
         EsceneAnimal = false;
     }
 
@@ -218,6 +222,8 @@ public class PhotoController : MonoBehaviour
 
         //pone ese sprite en la foto ingame
         imagen.sprite = photoSprite;
+
+        Galeria.sprite= photoSprite;
 
     }
 
