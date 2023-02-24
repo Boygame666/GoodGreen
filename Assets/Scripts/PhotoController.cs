@@ -21,6 +21,10 @@ public class PhotoController : MonoBehaviour
     /// </summary>
     public GameObject photo;
     /// <summary>
+    /// objeto físico de la foto dentro del juego que acompaña al jugador
+    /// </summary>
+    public GameObject PhotoP;
+    /// <summary>
     /// lista de objetos ocultos a mostrar
     /// </summary>
     public HIddenObject hidden;
@@ -36,6 +40,10 @@ public class PhotoController : MonoBehaviour
     /// componente animator de la foto física
     /// </summary>
     public Animator photoAnimator;
+    /// <summary>
+    /// componente animator de la foto que se guarda
+    /// </summary>
+    public Animator PhotoGaleria;
     /// <summary>
     /// velocidad de disi´pación del flash
     /// </summary>
@@ -70,9 +78,11 @@ public class PhotoController : MonoBehaviour
         flashReady = true;
         showing = false;
         photoAnimator = photo.GetComponent<Animator>();
+        PhotoGaleria = PhotoP.GetComponent<Animator>();
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
 
         imagen = photo.GetComponent<SpriteRenderer>();
+        imagen = PhotoP.GetComponent<SpriteRenderer>();
         EsceneAnimal = false;
     }
 
@@ -83,6 +93,7 @@ public class PhotoController : MonoBehaviour
         {
             //cancela la animación actual
             photoAnimator.Play("Empty");
+            PhotoGaleria.Play("Vacio");
             flashReady = false;
             StartCoroutine(CapturePhoto());
 
@@ -132,6 +143,7 @@ public class PhotoController : MonoBehaviour
             {
 
                 photoAnimator.Play("FotoAnim");
+                PhotoGaleria.Play("PhotoCollider");
                 showing = true;
 
             }
