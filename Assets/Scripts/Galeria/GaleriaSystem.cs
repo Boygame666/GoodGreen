@@ -25,4 +25,9 @@ public class GaleriaSystem
             galeriaslots.Add(new GaleriaSlots());
         }
     }
+    public bool AddToInventory(GaleriaScrip FotoToAdd,int amountToAdd)
+    {
+        galeriaslots[0] = new GaleriaSlots(FotoToAdd, amountToAdd);
+        return true;
+    }
 }
