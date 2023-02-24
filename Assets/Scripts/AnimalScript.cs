@@ -16,7 +16,6 @@ public class AnimalScript : MonoBehaviour
     public GameObject Animal;
     
     public Transform Es;
-    public PlayerController PC;
     public CambioCamara CC;
     private PhotoController PH;
     private CursorController controls;
@@ -79,7 +78,7 @@ public class AnimalScript : MonoBehaviour
                     CC.ListaDeCamaras[1].gameObject.SetActive(true);
                     CC.ListaDeCamaras[0].gameObject.SetActive(false);
                     CC.ListaDeCamaras[1].transform.position = new Vector3(Es.transform.position.x, Es.transform.position.y, -1);
-                    //CC.GetComponent<CambioCamara>().ActivarCamara(1);
+
                 }
                 if (hit2D.collider.tag == "BackAnimal")
                 {
@@ -87,7 +86,6 @@ public class AnimalScript : MonoBehaviour
                     Animal.GetComponent<PhotoController>().EscenaBackAnimal();
                     CC.ListaDeCamaras[1].gameObject.SetActive(false);
                     CC.ListaDeCamaras[0].gameObject.SetActive(true);
-                    //CC.ListaDeCamaras[0].gameObject.SetActive(true);
 
                 }
             }

@@ -82,7 +82,7 @@ public class PhotoController : MonoBehaviour
         flashReady = true;
         showing = false;
         photoAnimator = photo.GetComponent<Animator>();
-        PhotoCollider = PhotoP.GetComponent<Animator>();
+        //PhotoCollider = PhotoP.GetComponent<Animator>();
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
 
         imagen = photo.GetComponent<SpriteRenderer>();

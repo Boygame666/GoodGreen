@@ -1071,7 +1071,7 @@ MonoBehaviour:
   hidden: {fileID: 2128731105}
   cameraCamera: {fileID: 806597995}
   photoAnimator: {fileID: 1123131634}
-  PhotoCollider: {fileID: 1491292534}
+  PhotoCollider: {fileID: 1491292539}
   flashSpeed: 1
   showing: 0
   flashReady: 0
@@ -2177,9 +2177,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1491292533}
   - component: {fileID: 1491292535}
-  - component: {fileID: 1491292534}
   - component: {fileID: 1491292537}
   - component: {fileID: 1491292538}
+  - component: {fileID: 1491292539}
   m_Layer: 0
   m_Name: FotoGameObject
   m_TagString: Untagged
@@ -2202,26 +2202,6 @@ Transform:
   m_Father: {fileID: 258527672}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1491292534
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491292532}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b5207a32fbf23744a9d3fe68c5d12769, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!212 &1491292535
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2333,6 +2313,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &1491292539
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491292532}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b5207a32fbf23744a9d3fe68c5d12769, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1520071815
 GameObject:
   m_ObjectHideFlags: 0
@@ -2826,7 +2826,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650252789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.63, y: -3.3353958, z: 0}
+  m_LocalPosition: {x: -9.31, y: -3.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3368,7 +3368,6 @@ MonoBehaviour:
   trigger: 0
   Animal: {fileID: 527792273}
   Es: {fileID: 901898663}
-  PC: {fileID: 258527673}
   CC: {fileID: 258527675}
   cam: {fileID: 519420031}
 --- !u!61 &2113036351

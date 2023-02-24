@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e867d10982046c8479f35d967d6be1ba, type: 3}
   m_Name: Galeria Ardilla
   m_EditorClassIdentifier: 
-  ID: 0
-  NameOfAnimal: Verderon
+  ID: 1
+  NameOfAnimal: Ardilla
   DescriptionOfAnimal: Otro animal
   Imagen: {fileID: 0}
   MaxNumeroFotos: 1
