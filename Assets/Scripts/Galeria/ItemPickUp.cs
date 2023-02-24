@@ -23,7 +23,7 @@ public class ItemPickUp : MonoBehaviour
 
         if (Inventory.GaleriaSystem.AddToInventory(galeriaObject, 1))
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }
