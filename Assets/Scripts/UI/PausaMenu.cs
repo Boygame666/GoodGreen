@@ -38,6 +38,7 @@ public class PausaMenu : MonoBehaviour
             //MenuPausa.SetActive(true);
 
         }
+
     }
 
 
