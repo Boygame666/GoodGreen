@@ -28,6 +28,13 @@ public class GaleriaSlots
         MaxNumGaleriaFoto = -1;
 
     }
+    public void UpdateGaleriaSlot(GaleriaScrip data, int amount)
+    {
+        GaleriaFoto = data;
+        MaxNumGaleriaFoto = amount;
+        //esto hace que ya no haya necesidad de crear una nueva galeria dentro de galeriasystem, se actualiza con el nuevo objeto adquirido
+
+    }
     //se chequea que hay espacio para poder guardar mas fotos
     public bool RoomLeftForFoto(int amountToAdd, out int amountToLeft)
     {

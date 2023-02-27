@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,7 +24,7 @@ public class ItemPickUp : MonoBehaviour
 
         if (Inventory.GaleriaSystem.AddToInventory(galeriaObject, 1))
         {
-            Destroy(this.gameObject);
+            Debug.Log("pillado");
         }
     }
 }
