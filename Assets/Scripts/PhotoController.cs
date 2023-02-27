@@ -147,7 +147,7 @@ public class PhotoController : MonoBehaviour
             {
 
                 photoAnimator.Play("FotoAnim");
-                PhotoCollider.Play("ColliderPhoto");
+                PhotoCollider.Play("PhotoCollider");
                 showing = true;
 
             }
