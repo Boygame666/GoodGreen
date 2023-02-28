@@ -11,6 +11,7 @@ public class PausaMenu : MonoBehaviour
     /// referencia al canvas que estamos utlizando
     /// </summary>
     Canvas canvas;
+    public MenuOpciones opciones;
     private void Start()
     {
         //lo llamamos y al iniciarse esta desactivado
@@ -21,7 +22,7 @@ public class PausaMenu : MonoBehaviour
 
     private void Update()
     {
-            Pausa();
+        Pausa();
         
     }
     void Pausa()
@@ -32,7 +33,7 @@ public class PausaMenu : MonoBehaviour
             active = !active;
             canvas.enabled = active;
             Time.timeScale = (active) ? 0 : 1f;
-
+            opciones.GetComponent<Canvas>().enabled = false;
 
         }
 
