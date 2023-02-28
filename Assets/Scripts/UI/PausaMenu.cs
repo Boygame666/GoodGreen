@@ -11,9 +11,6 @@ public class PausaMenu : MonoBehaviour
     /// referencia al canvas que estamos utlizando
     /// </summary>
     Canvas canvas;
-    //[SerializeField] private GameObject MenuPausa;
-    public GameObject Opcion;
-
     private void Start()
     {
         //lo llamamos y al iniciarse esta desactivado
@@ -35,7 +32,7 @@ public class PausaMenu : MonoBehaviour
             active = !active;
             canvas.enabled = active;
             Time.timeScale = (active) ? 0 : 1f;
-            //MenuPausa.SetActive(true);
+
 
         }
 
