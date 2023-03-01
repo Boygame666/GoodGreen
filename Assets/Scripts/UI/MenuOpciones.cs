@@ -11,7 +11,6 @@ public class MenuOpciones : MonoBehaviour
     /// referencia al canvas que estamos utlizando
     /// </summary>
     Canvas canvas;
-    private bool juegoPausado = false;
 
     private void Start()
     {
@@ -24,7 +23,6 @@ public class MenuOpciones : MonoBehaviour
     {
         //Se activa cuando llaman a configuracion
         canvas.enabled = true;
-        juegoPausado=true;
         Time.timeScale = 0f;
 
     }
@@ -32,7 +30,6 @@ public class MenuOpciones : MonoBehaviour
     {
         //Se desactiva y muestra el canvas anterior
         canvas.enabled = false;
-        juegoPausado= true;
         Time.timeScale = 0f;
     }
 }
