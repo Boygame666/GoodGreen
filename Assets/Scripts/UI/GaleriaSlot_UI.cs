@@ -29,10 +29,18 @@ public class GaleriaSlot_UI : MonoBehaviour
         { 
             FotoSprite.sprite = slot.galeriaFoto.Imagen;
             FotoSprite.color = Color.white; 
+
         }
         else
         {
             ClearSlot();
+        }
+    }
+    public void UpdateSlot()
+    {
+        if (assinedSlot != null)
+        {
+            UpdateSlot(assinedSlot);
         }
     }
     public void ClearSlot()

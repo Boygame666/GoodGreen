@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 1667467977451798644}
   - component: {fileID: 4586329055275182926}
   - component: {fileID: 5000053363402388466}
+  - component: {fileID: 6254179867707654492}
   m_Layer: 5
   m_Name: GaleriaSlot
   m_TagString: Untagged
@@ -198,3 +199,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6254179867707654492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5603046017175580596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f19dd5a05611c458e4fe426952c14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FotoSprite: {fileID: 5603046016868989485}
+  assinedSlot:
+    GaleriaFoto: {fileID: 0}
+    MaxNumGaleriaFoto: -1
