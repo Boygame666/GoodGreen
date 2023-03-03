@@ -10,13 +10,15 @@ public class GaleriaSlot_UI : MonoBehaviour
     private Button button;
 
     public GaleriaSlots AssinedSlot => assinedSlot;
-
+    public GaleriaFotoDysplay ParentDisplay { get; private set; }
     private void Awake()
     {
         ClearSlot();
 
         button = GetComponent<Button>();
         button?.onClick.AddListener(OnUISlotClick);
+
+        ParentDisplay = transform.parent.GetComponent<GaleriaFotoDysplay>();
     }
     public void Init(GaleriaSlots slot)
     {
@@ -51,6 +53,6 @@ public class GaleriaSlot_UI : MonoBehaviour
     }
     public void OnUISlotClick()
     {
-
+        ParentDisplay?.slotclick(this);
     }
 }

@@ -11,6 +11,10 @@ public abstract class GaleriaFotoDysplay : MonoBehaviour
     public GaleriaSystem GaleriaSystem => galeriaSystem;
     public Dictionary<GaleriaSlot_UI, GaleriaSlots> SlotDictionary => slotDictionary;
 
+    protected virtual void Start()
+    {
+
+    }
     public abstract void AssigSlot(GaleriaSystem InvToDisplay);
 
     protected virtual void UpdateSlot(GaleriaSlots UpdateSlot)
@@ -22,5 +26,9 @@ public abstract class GaleriaFotoDysplay : MonoBehaviour
                 slot.Key.UpdateSlot(UpdateSlot);
             }
         }
+    }
+    public void slotclick(GaleriaSlot_UI clickSlot)
+    {
+        Debug.Log("slot has been clicked");
     }
 }
