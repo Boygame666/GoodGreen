@@ -17,5 +17,7 @@ MonoBehaviour:
   DescriptionOfAnimal: 'Verderon un pajaro
 
 '
+  ImagenTexture: {fileID: 0}
   Imagen: {fileID: 0}
+  imagen: {fileID: 0}
   MaxNumeroFotos: 1

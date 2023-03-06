@@ -10,6 +10,17 @@ public class GaleriaScrip : ScriptableObject
     public string NameOfAnimal;
     [TextArea(4,4)]
     public string DescriptionOfAnimal;
-    public Sprite Imagen;
+    public Texture2D ImagenTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+    public Sprite Imagen ;
+    public SpriteRenderer imagen;
     public int MaxNumeroFotos;
+   
+    void Update()
+    {     
+        Sprite photoSprite = Sprite.Create(ImagenTexture, new Rect(0.0f, 0.0f, ImagenTexture.width, ImagenTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
+        //pone ese sprite en la foto ingame
+        imagen.sprite = photoSprite;
+    }
+
+
 }
