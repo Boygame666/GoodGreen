@@ -15,5 +15,6 @@ MonoBehaviour:
   ID: 1
   NameOfAnimal: Ardilla
   DescriptionOfAnimal: Otro animal
+  ImagenTexture: {fileID: 0}
   Imagen: {fileID: 0}
   MaxNumeroFotos: 1
