@@ -26,6 +26,7 @@ public class AnimalScript : MonoBehaviour
     {
         controls = new CursorController(); 
         cam = Camera.main;
+
     }
 
     private void OnEnable()
@@ -73,11 +74,11 @@ public class AnimalScript : MonoBehaviour
             {
                 if(hit2D.collider.tag == "Animal")
                 {
-                    //cam.transform.position = new Vector3(Es.transform.position.x, Es.transform.position.y, -1);
                     Animal.GetComponent<PhotoController>().EscenaAnimal();
                     CC.ListaDeCamaras[1].gameObject.SetActive(true);
                     CC.ListaDeCamaras[0].gameObject.SetActive(false);
                     CC.ListaDeCamaras[1].transform.position = new Vector3(Es.transform.position.x, Es.transform.position.y, -1);
+                    //cam.transform.position = new Vector3(Es.transform.position.x, Es.transform.position.y, -1);
 
                 }
                 if (hit2D.collider.tag == "BackAnimal")

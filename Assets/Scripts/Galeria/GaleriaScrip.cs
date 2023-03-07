@@ -12,9 +12,9 @@ public class GaleriaScrip : ScriptableObject
     [TextArea(4,4)]
     public string DescriptionOfAnimal;
     public event Action SpriteChanged;
-    public Texture2D ImagenTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
-    public Sprite Imagen ;
-    //public SpriteRenderer imagen;
+    //public Texture2D ImagenTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+    [SerializeField]public Sprite Imagen ;
+    //public SpriteRenderer imagen ;
     public int MaxNumeroFotos;
    
     public Sprite Sprite
@@ -22,7 +22,7 @@ public class GaleriaScrip : ScriptableObject
         get { return Imagen; }
         set
         {
-            if (Imagen = value)
+            if (Imagen == value)
                 return;
             Imagen = value;
             SpriteChanged?.Invoke();
