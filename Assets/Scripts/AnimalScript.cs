@@ -14,7 +14,6 @@ public class AnimalScript : MonoBehaviour
     /// </summary>
     public bool trigger;
     public GameObject Animal;
-    
     public Transform Es;
     public CambioCamara CC;
     private PhotoController PH;
@@ -74,7 +73,7 @@ public class AnimalScript : MonoBehaviour
             {
                 if(hit2D.collider.tag == "Animal")
                 {
-                    Animal.GetComponent<PhotoController>().EscenaAnimal();
+                    Animal.GetComponent<PhotoController>().EscenaAnimal();                  
                     CC.ListaDeCamaras[1].gameObject.SetActive(true);
                     CC.ListaDeCamaras[0].gameObject.SetActive(false);
                     CC.ListaDeCamaras[1].transform.position = new Vector3(Es.transform.position.x, Es.transform.position.y, -1);

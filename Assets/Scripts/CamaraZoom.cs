@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class CamaraZoom : MonoBehaviour
 {
-    [SerializeField] float sensibilidad;
-    [SerializeField] float ZoomMin;
-    [SerializeField] float ZoomMax;
-
-    public bool ZoomActive;
-
-    public Vector3[] Traget;
+    public float ZoomOut ;
 
 
     public Camera Camera;
@@ -23,6 +17,10 @@ public class CamaraZoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(ZoomActive) { }
+        Camera.fieldOfView = ZoomOut;
+    }
+    public void ZoomMovement(float Zoom)
+    {
+        ZoomOut = Zoom;
     }
 }

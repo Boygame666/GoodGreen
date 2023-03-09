@@ -274,6 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: 0
   Animal: {fileID: 885075076}
+  CZ: {fileID: 0}
   Es: {fileID: 875830775}
   CC: {fileID: 258527675}
   cam: {fileID: 519420031}
@@ -1879,7 +1880,7 @@ RectTransform:
   - {fileID: 322497837}
   - {fileID: 2140188664}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2417,6 +2418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806597996}
   - component: {fileID: 806597995}
+  - component: {fileID: 806597997}
   m_Layer: 0
   m_Name: CamaraFoto
   m_TagString: MainCamera
@@ -2492,6 +2494,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &806597997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806597994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1397947423e9c42ac57481c9dc6702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZoomOut: 60
+  Camera: {fileID: 0}
 --- !u!1 &875830773
 GameObject:
   m_ObjectHideFlags: 0
@@ -5926,6 +5942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: 0
   Animal: {fileID: 527792273}
+  CZ: {fileID: 0}
   Es: {fileID: 901898663}
   CC: {fileID: 258527675}
   cam: {fileID: 519420031}
@@ -6169,7 +6186,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2140188663
 GameObject:
