@@ -1,26 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Mathematics;
 
 public class CamaraZoom : MonoBehaviour
 {
-    public float ZoomOut ;
-
-
     public Camera Camera;
-    // Start is called before the first frame update
-    void Start()
-    { 
-        Camera = Camera.main;
-    }
+    [SerializeField] float Zoom;
+    [SerializeField] float ZoomMin;
+    [SerializeField] float ZoomMax;
+
 
     // Update is called once per frame
     void Update()
     {
-        Camera.fieldOfView = ZoomOut;
+
+        limiteZoom();
+
     }
-    public void ZoomMovement(float Zoom)
+    public void limiteZoom()
     {
-        ZoomOut = Zoom;
+        if (Camera.orthographicSize >= ZoomMax && Camera.orthographicSize <= ZoomMin)
+        {
+            if (Camera.orthographic)
+            {
+                Camera.orthographicSize -= Input.GetAxis("Mouse ScrollWheel") * Zoom;
+            }
+            else
+            {
+                Camera.fieldOfView -= Input.GetAxis("Mouse ScrollWheel") * Zoom;
+            }
+        }
+        else
+        {
+            if (Camera.orthographicSize >= ZoomMin)
+            {
+                Camera.orthographicSize = ZoomMin;
+
+            }
+            if (Camera.orthographicSize <= ZoomMax)
+            {
+                Camera.orthographicSize = ZoomMax;
+            }
+
+
+        }
     }
 }
