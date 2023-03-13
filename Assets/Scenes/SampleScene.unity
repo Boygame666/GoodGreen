@@ -2509,6 +2509,7 @@ MonoBehaviour:
   Zoom: 1
   ZoomMin: 5
   ZoomMax: 3
+  Background: {fileID: 901898662}
 --- !u!1 &875830773
 GameObject:
   m_ObjectHideFlags: 0

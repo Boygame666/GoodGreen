@@ -6,14 +6,21 @@ using Unity.Mathematics;
 public class CamaraZoom : MonoBehaviour
 {
     public Camera Camera;
-    [SerializeField] float Zoom;
-    [SerializeField] float ZoomMin;
-    [SerializeField] float ZoomMax;
+    [SerializeField] float Zoom, ZoomMin, ZoomMax;
 
+    [SerializeField]
+    private SpriteRenderer Background;
+
+    private float FotoMinX, FotoMaxX, FotoMinY, FotoMaxY;
 
     // Update is called once per frame
     void Update()
     {
+        FotoMinX = Background.transform.position.x - Background.bounds.size.x;
+        FotoMaxX = Background.transform.position.x + Background.bounds.size.x;
+
+        FotoMinY = Background.transform.position.y - Background.bounds.size.y;
+        FotoMaxY = Background.transform.position.y + Background.bounds.size.y;
 
         limiteZoom();
 
