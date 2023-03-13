@@ -13,8 +13,8 @@ public class AnimalScript : MonoBehaviour
     /// booleano que gestiona la activación de los triggers del mapa
     /// </summary>
     public bool trigger;
-    public GameObject Animal;
-    public Transform Es;
+    [SerializeField] public GameObject Animal;
+    [SerializeField] public Transform Es;
     public CambioCamara CC;
     private PhotoController PH;
     private CursorController controls;
